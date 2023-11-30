@@ -21,7 +21,43 @@ public class UsuarioModelMySQL implements UsuarioDAO
    {
       return null;
    }
-   
+
+   @Override
+   public int obtenerIdPorUsername(String username){
+      Connection cn = null;
+      PreparedStatement pstm = null;
+      ResultSet rs = null;
+      int idUsuario = -1;
+      try {
+         cn = MySQLConnection.getConexion();
+         String query = "SELECT IdUsuario FROM usuarios WHERE username = ?";
+         pstm = cn.prepareStatement(query);
+         pstm.setString(1, username);
+         rs = pstm.executeQuery();
+
+         if (rs.next()) {
+            idUsuario = rs.getInt("IdUsuario");
+         }
+      } catch (Exception e) {
+         e.printStackTrace();
+      } finally {
+         try {
+            if (rs != null)
+               rs.close();
+            if (pstm != null)
+               pstm.close();
+            if (cn != null)
+               cn.close();
+         } catch (Exception ex2) {
+            ex2.printStackTrace();
+         }
+      }
+
+
+
+      return idUsuario;
+   }
+
    @Override
    public Usuario loginUsuario(String username, String password)
    {
