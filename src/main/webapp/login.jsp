@@ -4,7 +4,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Intranet</title>
+    <title>Iniciar Sesion</title>
     <link rel="stylesheet" href="resources/css/tundra.css">
 
 
@@ -14,21 +14,19 @@
     <script type="text/javascript" src="resources/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="resources/js/bootstrapValidator.js"></script>
 
-    <link rel="stylesheet" href="resources/css/bootstrap.css"></link>
-    <link rel="stylesheet" href="resources/css/bootstrapValidator.css"></link>
 
 
 </head>
 <body>
 <!-- Login Form -->
-<div class="layout">
+<div class="layout images-background">
 
     <div class="form-box-container">
         <h1 class="Welcome">
             Inicio de Sesion
         </h1>
         <div class="main-form-box">
-            <form method="get" action="usuarioServlet" id="frmUsuario">
+            <form method="post" action="usuarioServlet" id="frmUsuario">
                 <input type="hidden" name="txt_accion" id="txt_accion" value=""/>
                 <div class="form-input">
                     <input type="text" id="username" autocomplete="off" class="form-control" name="username"

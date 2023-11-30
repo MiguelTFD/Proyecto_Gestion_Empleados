@@ -14,7 +14,11 @@ public class UsuarioService
    public List<Usuario> listarUsuarios(){
       return null;
    }
-   
+
+   public Usuario obtenerUsuario(int UsuarioId) {
+    return null;
+   }
+
    public Usuario loginUsuario(String username, String password)
    {
       return ice_usuarioDAO.loginUsuario(username,password);
@@ -24,6 +28,10 @@ public class UsuarioService
    }
    public void actualizarUsuario(Usuario usuario){
    
+   }
+
+   public int obtenerIdPorUsername(String username){
+      return ice_usuarioDAO.obtenerIdPorUsername(username);
    }
    
    

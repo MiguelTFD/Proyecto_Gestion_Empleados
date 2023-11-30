@@ -34,7 +34,7 @@ public class UsuarioServlet extends HttpServlet
    protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
    {
       String accion = req.getParameter("txt_accion");
-      System.out.println("ga nomas");
+      System.out.println("Validando Accion: ");
       
       if (accion == null)
       {
@@ -53,7 +53,7 @@ public class UsuarioServlet extends HttpServlet
       }else if (accion.equals("CREAR")){
          crear(req, res);
       }else {
-         System.out.println("xd final");
+         System.out.println("No se encontro accion por realizar");
       }
    }
    
@@ -76,7 +76,7 @@ public class UsuarioServlet extends HttpServlet
       frost_usuario.setPassword(ice_password);
       
       usuarioService.CrearUsuario(frost_usuario);
-      req.getRequestDispatcher("/registro.jsp").forward(req, res);
+      req.getRequestDispatcher("/login.jsp").forward(req, res);
       
    }
    
@@ -103,7 +103,6 @@ public class UsuarioServlet extends HttpServlet
          System.out.println("Tiempo max. de inactividad" + session.getMaxInactiveInterval());
          session.setAttribute("Usuariologeado", frost_usuario);
          System.out.println(session.getAttribute("NombreUsuario"));
-         
          req.getRequestDispatcher("/index.jsp").forward(req, res);
          
       }
@@ -113,5 +112,11 @@ public class UsuarioServlet extends HttpServlet
   {
      req.getRequestDispatcher("/registro.jsp").forward(req, res);
   }
-   
+
+   public void listarDatos(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException
+   {
+         //listar datos, si el usuario es un empleado se realizaran una logica y si es el usuario de tipo postulante, sera otra logica, y si es usuario normal se ejecute otra logica, obiamente esto se obtendra mediante el idUsuario
+   }
+
+
 }

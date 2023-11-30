@@ -8,8 +8,8 @@
     margin: 0;
     padding: 0;
     font-family: Arial;
-    /*border: 1px solid red;*/
     border-style: none;
+    overflow: hidden;
 
 }
 
@@ -17,16 +17,22 @@ body {
     height: 100vh; /* Añadido */
 }
 
-.layout {
-    background-image: url("../images/mountain_jaws.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.layout{
     display: grid;
     height: 100vh; /* Añadido */
     width: 100%;
 }
 
+
+.images-background{
+    background-image: url("../images/mountain_jaws.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.default-background{
+    background-color: #D8DEE9;
+}
 .form-box-container {
     padding: 60px 30px;
     align-self: start;
@@ -56,7 +62,7 @@ body {
     font-weight: bold;
     border-radius: 10px;
     background: #3446D3;
-    transition: ease background-color 0.5s, box-shadow 0.5s;
+    transition: ease background-color 0.5s, box-shadow 0.5s !important;
 
 }
 
@@ -67,33 +73,42 @@ body {
 }
 
 .form-control {
-    background-color: #3B4252;
-    padding: 9px;
-    border-radius: 9px;
-    color: #D8DEE9;
-    font-size: 20px;
-    border: #3B4252 1px solid;
-    width: -webkit-fill-available;
-    font-weight: initial;
-    margin: 15px 0 15px 0;
+    background-color: #3B4252 !important;
+    padding: 9px !important;
+    border-radius: 9px !important;
+    color: #D8DEE9 !important;
+    font-size: 20px !important;
+    border: #3B4252 1px solid !important;
+    width: -webkit-fill-available !important;
+    font-weight: initial !important;
+    margin: 15px 0 15px 0 !important;
+    transition: color ease 1s !important;
+}
+.form-control:focus {
+   color: #2E3440 !important;
+}
+
+input{
+    transition: ease all 1s !important;
 }
 
 input::placeholder {
-    color: #4C566A; /* Cambia el color del placeholder a rojo */
-    border-style: none;
-
+    color: #4C566A !important; /* Cambia el color del placeholder a rojo */
+    border-style: none !important;
+    transition: all ease 1s !important;
 }
 
 input:focus {
 
-    box-shadow: 0px 6px 4px 2px rgba(0, 0, 0, 0.40);
-    outline: none;
+    box-shadow: 0px 6px 4px 2px rgba(0, 0, 0, 0.40) !important;
+    outline: none !important;
+    background-color: #D8DEE9 !important;
 }
 
 .second {
     background: #D8DEE9;
     color: #2E3440;
-    transition: ease background-color 0.5s, box-shadow 0.5s;
+    transition: ease background-color 0.5s, box-shadow 0.5s !important;
 }
 
 .second:hover {
@@ -116,6 +131,62 @@ input:focus {
     display: block;
     text-align: center;
 }
+.rigth-panel-contain{
+    background-color: #F9FAFE;
+    border-radius: 90px ;
+    width: 85%;
+}
+.icon-containers{
+    background-color: #D8DEE9;
+    border-radius: 60px;
+    width: 200px;
+    height: 200px;
+}
+.left-icons{
+    width: 15%;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+}
+
+.layout2{
+    height: 100vh; /* Añadido */
+    width: 100%;
+}
+.frm-main{
+    display: flex;
+    height: 100vh;
+}
+
+
+.main-form-boxv2{
+    margin: auto;
+    border-radius: 10px; /* Borde redondeado para el efecto */
+    padding: 20px; /* Espaciado interno */
+
+}
+.form-box-containerv2 {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.2);
+    height: auto;
+    align-self: center;
+    border-radius: 20px;
+}
+
+.layoutv2{
+    display: grid;
+    height: 100vh; /* Añadido */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.mb-3{
+    padding: 9px !important;
+}
+.form-label{
+    color: #8FBCBB !important;
+}
+
 
 /*================================================== Cambios para hacer el diseño más responsive ====================================*/
 @media screen and (max-width: 990px) {
